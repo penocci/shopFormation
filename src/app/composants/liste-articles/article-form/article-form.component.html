@@ -1,0 +1,27 @@
+<h2>Nouvel article</h2>
+<form #monForm="ngForm" (submit)="ajouterArticle()" [formGroup]="articleForm">
+  <div>
+    Désignation :
+    <input type="text" formControlName="designation" />
+  </div>
+  <div>
+    Description :
+    <input type="text-area" formControlName="description" autocomplete="on" />
+  </div>
+  <div>
+    Prix Unitaire :
+    <input type="number" formControlName="prixUnitaire" autocomplete="on" />
+  </div>
+  <div>
+    Image Article :
+    <input type="text" formControlName="imageArticle" autocomplete="on" />
+  </div>
+  <div>
+    Quantité en stock :
+    <input type="number" formControlName="qteEnStock" autocomplete="on" />
+  </div>
+  
+
+  <button class="btn btn-primary btn-sm btn-rounded" [disabled]="!monForm.valid">Ajouter</button>
+</form>
+

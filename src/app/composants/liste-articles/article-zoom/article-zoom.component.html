@@ -1,0 +1,40 @@
+<div class="list-container-in">
+  <div>
+    <h4>{{ article.designation }}</h4>
+    <div>
+      <a [routerLink]="['/editer', article.id]"
+        ><button type="button" class="btn btn-primary btn-sm">
+          <i class="fas fa-edit"></i></button
+      ></a>
+      <button
+        (click)="supprimerArticle(article.id)"
+        type="button"
+        class="btn btn-danger btn-sm"
+      >
+        <i class="far fa-trash-alt"></i>
+      </button>
+    </div>
+  </div>
+  <div class="listeimg">
+    <img  [src]="article.imageArticle" alt="" />
+  </div>
+  <div class="list-description">
+    <ul>
+      <li>
+        <h6>Description :</h6>
+        <p>{{ article.description }}</p>
+      </li>
+      <li>
+        <h6>Prix :</h6>
+        <h4>{{ article.prixUnitaire }}€</h4>
+      </li>
+      <li>
+        <h6>Quantité en stock :</h6>
+        <p>{{ article.qteEnStock }}</p>
+      </li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-outline-primary">
+    <i class="fas fa-cart-arrow-down"></i>
+  </button>
+</div>

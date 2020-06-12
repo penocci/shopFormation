@@ -1,0 +1,37 @@
+<h2>Éditer article</h2>
+<form #monForm="ngForm" (submit)="editArticle()" [formGroup]="articleForm">
+  <div>
+    Désignation :
+    <input type="text" formControlName="designation" />
+  </div>
+  <div>
+    Description :
+    <input type="text-area" formControlName="description" autocomplete="on" />
+  </div>
+  <div>
+    Prix Unitaire :
+    <input type="number" formControlName="prixUnitaire" autocomplete="on" />
+  </div>
+  <div>
+    Image Article :
+    <input type="text" formControlName="imageArticle" autocomplete="on" /><img
+      class="listeimg"
+      [src]="article.imageArticle"
+      alt=""
+      style="width: 100px;"
+    />
+  </div>
+  <div>
+    Quantité en stock :
+    <input type="number" formControlName="qteEnStock" autocomplete="on" />
+  </div>
+
+  <button class="btn btn-primary btn-sm btn-rounded">Modifier</button
+  ><button
+    class="btn btn-danger btn-sm btn-rounded"
+    type="button"
+    (clic)="supprimerArticle(article.id)"
+  >
+    Supprimer
+  </button>
+</form>
